@@ -144,7 +144,7 @@ function display_admin_panel(){
                   <div class="col-md-8"><input type="text" class="form-control"  name="contact"></div><br><br>
                   <div class="col-md-4"><label>Doctor:</label></div>
                   <div class="col-md-8">
-                   <select name="doctor" class="form-control" >
+                   <select name="doctor" class="form-control" id="doctor-select">
 
                      <!-- <option value="" disabled selected>Select Doctor</option>
                      <option value="Dr. Punam Shaw">Dr. Punam Shaw</option>
@@ -156,6 +156,22 @@ function display_admin_panel(){
 
                     </select>
                   </div><br><br>
+
+                  <div class="col-md-4"><label>Consultancy Fees:</label></div>
+                  <div class="col-md-8">
+                    <input type="text" class="form-control" id="docFees-display" readonly placeholder="Select a doctor first" style="background:#e9ecef;"/>
+                    <input type="hidden" name="docFees" id="docFees-hidden"/>
+                  </div><br><br>
+
+                  <script>
+                    document.getElementById('doctor-select').addEventListener('change', function() {
+                      var selected = this.options[this.selectedIndex];
+                      var fee = selected.getAttribute('data-value');
+                      document.getElementById('docFees-display').value = fee ? 'KES ' + fee : '';
+                      document.getElementById('docFees-hidden').value = fee || '';
+                    });
+                  </script>
+
                   <div class="col-md-4"><label>Payment:</label></div>
                   <div class="col-md-8">
                     <select name="payment" class="form-control" >

@@ -152,7 +152,7 @@ function checklen()
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="User Name *" name="username3" onkeydown="return alphaOnly(event);" required/>
+                                            <input type="text" class="form-control" placeholder="User Name *" name="username3" required/>
                                         </div>
                                     </div>
                                     <div class="col-md-6">

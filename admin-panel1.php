@@ -318,7 +318,6 @@ if(isset($_POST['docsub1']))
                     <th scope="col">Gender</th>
                     <th scope="col">Email</th>
                     <th scope="col">Contact</th>
-                    <th scope="col">Password</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -334,7 +333,6 @@ if(isset($_POST['docsub1']))
                       $gender = $row['gender'];
                       $email = $row['email'];
                       $contact = $row['contact'];
-                      $password = $row['password'];
                       
                       echo "<tr>
                         <td>$pid</td>
@@ -343,7 +341,6 @@ if(isset($_POST['docsub1']))
                         <td>$gender</td>
                         <td>$email</td>
                         <td>$contact</td>
-                        <td>$password</td>
                       </tr>";
                     }
 

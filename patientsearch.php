@@ -14,7 +14,7 @@ if(isset($_POST['patient_search_submit']))
 	$query = "select * from patreg where contact= '$contact'";
   $result = mysqli_query($con,$query);
   $row=mysqli_fetch_array($result);
-  if($row['lname']=="" & $row['email']=="" & $row['contact']=="" & $row['password']==""){
+  if($row['lname']=="" & $row['email']=="" & $row['contact']==""){
     echo "<script> alert('No entries found! Please enter valid details'); 
           window.location.href = 'admin-panel1.php#list-doc';</script>";
   }
@@ -29,7 +29,6 @@ if(isset($_POST['patient_search_submit']))
       <th scope='col'>Last Name</th>
       <th scope='col'>Email</th>
       <th scope='col'>Contact</th>
-      <th scope='col'>Password</th>
     </tr>
   </thead>
   <tbody>";
@@ -39,13 +38,11 @@ if(isset($_POST['patient_search_submit']))
         $lname = $row['lname'];
         $email = $row['email'];
         $contact = $row['contact'];
-        $password = $row['password'];
         echo "<tr>
           <td>$fname</td>
           <td>$lname</td>
           <td>$email</td>
           <td>$contact</td>
-          <td>$password</td>
         </tr>";
     
 	echo "</tbody></table><center><a href='admin-panel1.php' class='btn btn-light'>Back to dashboard</a></div></center></div></div></div>";

@@ -363,8 +363,10 @@ function get_specs(){
 
                         <script>
               document.getElementById('doctor').onchange = function updateFees(e) {
-                var selection = document.querySelector(`[value=${this.value}]`).getAttribute('data-value');
-                document.getElementById('docFees').value = selection;
+                var selectedOption = this.options[this.selectedIndex];
+                var fee = selectedOption.getAttribute('data-value');
+                document.getElementById('docFees').value = fee ? 'KES ' + fee : '';
+                document.getElementById('docFees-raw').value = fee || '';
               };
             </script>
 
@@ -417,8 +419,8 @@ function get_specs(){
                                 Consultancy Fees
                               </label></div>
                               <div class="col-md-8">
-                              <!-- <div id="docFees">Select a doctor</div> -->
-                              <input class="form-control" type="text" name="docFees" id="docFees" readonly="readonly"/>
+                              <input class="form-control" type="text" id="docFees" readonly="readonly" placeholder="Select a doctor to see the fee" style="background:#e9ecef;"/>
+                              <input type="hidden" name="docFees" id="docFees-raw"/>
                   </div><br><br>
 
                   <div class="col-md-4"><label>Appointment Date</label></div>
