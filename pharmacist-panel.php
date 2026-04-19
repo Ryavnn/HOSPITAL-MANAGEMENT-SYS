@@ -151,7 +151,9 @@ if(isset($_POST['delete_med'])) {
                 </thead>
                 <tbody>
                   <?php 
-                  $query = "SELECT p.*, p.ID as app_id, p.pid as patient_id FROM prestb p WHERE p.dispensed = 0";
+                  $query = "SELECT p.*, p.ID as app_id, p.pid as patient_id FROM prestb p 
+                            WHERE p.dispensed = 0 
+                            AND EXISTS (SELECT 1 FROM doctor_prescribed_meds d WHERE d.app_id = p.ID)";
                   $res = mysqli_query($con, $query);
                   while($row = mysqli_fetch_array($res)){
                       $app_id = $row['app_id'];
