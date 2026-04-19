@@ -164,11 +164,11 @@ function display_admin_panel(){
                   </div><br><br>
 
                   <script>
-                    document.getElementById('doctor-select').addEventListener('change', function() {
+                    document.getElementById("doctor-select").addEventListener("change", function() {
                       var selected = this.options[this.selectedIndex];
-                      var fee = selected.getAttribute('data-value');
-                      document.getElementById('docFees-display').value = fee ? 'KES ' + fee : '';
-                      document.getElementById('docFees-hidden').value = fee || '';
+                      var fee = selected.getAttribute("data-value");
+                      document.getElementById("docFees-display").value = fee ? "KES " + fee : "";
+                      document.getElementById("docFees-hidden").value = fee || "";
                     });
                   </script>
 

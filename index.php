@@ -84,7 +84,7 @@ function checklen()
                        
                     </div>
                     <div class="col-md-9 register-right" style="margin-top: 40px;left: 80px;">
-                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="width: 40%;">
+                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist" style="width: 50%;">
                             <li class="nav-item">
                                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Patient</a>
                             </li>
@@ -92,7 +92,10 @@ function checklen()
                                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Doctor</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#admin" role="tab" aria-controls="admin" aria-selected="false">Receptionist</a>
+                                <a class="nav-link" id="pharmacist-tab" data-toggle="tab" href="#pharmacist" role="tab" aria-controls="pharmacist" aria-selected="false">Pharmacist</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="admin-tab" data-toggle="tab" href="#admin" role="tab" aria-controls="admin" aria-selected="false">Receptionist</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent">
@@ -167,7 +170,7 @@ function checklen()
                             </div>
 
 
-                            <div class="tab-pane fade show" id="admin" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="tab-pane fade show" id="admin" role="tabpanel" aria-labelledby="admin-tab">
                                 <h3  class="register-heading">Login as Admin</h3>
                                 <form method="post" action="func3.php">
                                 <div class="row register-form">
@@ -185,6 +188,26 @@ function checklen()
                                         </div>
                                         
                                         <input type="submit" class="btnRegister" name="adsub" value="Login"/>
+                                    </div>
+                                </div>
+                            </form>
+                            </div>
+
+                            <div class="tab-pane fade show" id="pharmacist" role="tabpanel" aria-labelledby="pharmacist-tab">
+                                <h3  class="register-heading">Login as Pharmacist</h3>
+                                <form method="post" action="func-pharmacist.php">
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="User Name *" name="username_ph" required/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *" name="password_ph" required/>
+                                        </div>
+                                        
+                                        <input type="submit" class="btnRegister" name="phsub" value="Login"/>
                                     </div>
                                 </div>
                             </form>
